@@ -28,7 +28,7 @@ export const App: React.FC = () => {
   let visibleGoods = [...goodsFromServer];
 
   if (sortField) {
-    visibleGoods = visibleGoods.sort((good1, good2) => {
+    visibleGoods = visibleGoods.slice().sort((good1, good2) => {
       switch (sortField) {
         case Params.alphabetically:
           return good1.localeCompare(good2);
